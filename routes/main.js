@@ -64,7 +64,7 @@ router.post("/form",(req,res)=>{
 //Fetching
 router.post("/getvisitors",(req,res)=>{
     const model = require("../models/visitorEntryModel");
-    model.find({}).then(resp=>{
+    model.find({exited:0}).then(resp=>{
         res.send(resp); 
     }).catch(err=>{
         console.log("Error occured in gerring data")
@@ -76,7 +76,8 @@ router.post("/getvisitors",(req,res)=>{
 router.post("/delete/:id",(req,res)=>{
     const id =req.params.id;
     const model = require("../models/visitorEntryModel");
-    model.find({entered:id}).then(resp=>{
+
+    model.findById(id).then(resp=>{
         const mail = resp[0]['visitorEmail'];
         const name = resp[0]['visitorName'];
         const host = resp[0]['hostName'];
@@ -135,7 +136,8 @@ router.post("/delete/:id",(req,res)=>{
     }).catch(err=>{
         console.log(err);
     })
-    model.deleteOne({entered:id}).then(()=>{
+    //Update exited to 1
+    model.findByIdAndUpdate(id,{$set:{exited:1}},{new:true}).then(()=>{
         console.log("removed");
         res.send("removed");
     }).catch(err=>{

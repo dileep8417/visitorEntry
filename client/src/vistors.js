@@ -21,7 +21,7 @@ export default class AllVisitors extends Component{
                   <td>{visitor.hostMobile}</td>
                   <td>{visitor.entered}</td>
                   <td>{visitor.purpose}</td>
-                  <td><a onClick={(e)=>{e.preventDefault();if(window.confirm(`Is ${visitor.visitorName}'s visit over?`)){this.remove(visitor["entered"])}}} href={visitor["entered"]}>Visit Over</a></td>
+                  <td><a href={visitor["_id"]} onClick={(e)=>{e.preventDefault();if(window.confirm(`Is ${visitor.visitorName}'s visit over?`)){this.remove(visitor["_id"])}}}>Visit Over</a></td>
               </tr>
           )
       });

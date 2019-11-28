@@ -13,6 +13,10 @@ const dataSchema = new schema({
     visitorMobile:String,
     purpose:String,
     entered:String,
+    exited:{
+        default:0,
+        type:Number
+    }
 });
 
 //model

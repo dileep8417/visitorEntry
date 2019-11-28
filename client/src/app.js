@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import Form from './form';
 import axios from 'axios';
 import AllVisitors from "./vistors";
+import Navbar from "./navbar";
 import "./app.css"
 
 export default class App extends Component{
@@ -31,12 +32,13 @@ export default class App extends Component{
             })
         });
     }
+   
     render(){
         return(
             <div id="app">
-                <div className="nav"><h6>Visitor Entry Software</h6><p className="mail">Dileep8417@gmail.com</p></div>
+            <img src="https://www.goggles4u.com/media/wysiwyg/Homepage/loading.gif" style={{"display":this.state.loading?"block":"none"}} className="loader" alt=""/>
                 <div className="container-fluid">
-                    <img src="https://www.goggles4u.com/media/wysiwyg/Homepage/loading.gif" style={{"display":this.state.loading?"block":"none"}} className="loader" alt=""/>
+                    <Navbar/>
                     <div className="row">
                         <div className="col s4 form">
                         <Form loading={this.state.loading} updateVisitors={this.getVisitors}/>

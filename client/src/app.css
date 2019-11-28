@@ -4,10 +4,10 @@
         background: #f1f2f6;
     }
 }
-.mail{
+.report-btn{
     float:right;
     margin-right: 30px;
-    margin-top:-5px;
+    margin-top:-25px;
 }
 .form{
     position: relative;
@@ -18,12 +18,8 @@
     overflow-x: hidden;
     box-shadow: 2px 3px 4px black;;
 }
-.nav{
-    width:100%;
-    height:60px;   
-    background:#81ecec;
-    color:white;
-    margin-bottom:10px;
+#navbar{
+    margin-bottom:15px;
     margin-top:-14px !important;
 }
 .nav h6{
