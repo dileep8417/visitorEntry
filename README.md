@@ -37,12 +37,10 @@
     DBCLUSTER = `Cluster-Name`
 
 ## Running the Application  
- Run the following command `npm run dev` for executing the software.
+ Run the following command `npm run project` for executing the software.
 
 ## Operating and Working
  Fill the form details with the information of visitor and host.
  Then an Email will be send to the Host.
  After completion of meeting you have to remove the visitor from the visitors list.
  Then an Email will be send to the Visitor.
-
-#### Note: node_modules are not commited
