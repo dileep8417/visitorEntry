@@ -4,13 +4,12 @@ const hbs = require("nodemailer-express-handlebars");
 require("dotenv").config();
 const fromMAil = process.env.MAIL;
 
-let date = new Date(Date.now());
-date = date.getDate()+"-"+parseInt(date.getMonth()+1)+"-"+date.getFullYear()+","+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
-
 //route to handle the form data
 
 //Insertion
 router.post("/form",(req,res)=>{
+   var date = new Date(Date.now());
+    date = date.getDate()+"-"+parseInt(date.getMonth()+1)+"-"+date.getFullYear()+","+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
    const model = require("../models/visitorEntryModel");
    const data = {
        visitorName:req.body.visitor,
