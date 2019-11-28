@@ -1,0 +1,81 @@
+@media(min-width:600px){
+    body,html{
+        overflow:hidden;
+        background: #f1f2f6;
+    }
+}
+.mail{
+    float:right;
+    margin-right: 30px;
+    margin-top:-5px;
+}
+.form{
+    position: relative;
+    background: white;
+    border-radius:10px;
+    height:80vh;
+    padding:20px;
+    overflow-x: hidden;
+    box-shadow: 2px 3px 4px black;;
+}
+.nav{
+    width:100%;
+    height:60px;   
+    background:greenyellow;
+    margin-bottom:10px;
+    margin-top:-14px !important;
+    
+}
+.nav h6{
+    position: relative;
+    top:20px;
+    padding-left:30px;
+    color:rgb(67, 67, 252);
+}
+#list{
+    border-radius:10px;
+    background: white;
+    height:88vh;
+    box-shadow: 1px 1px 4px black;;
+
+    overflow: auto;
+}
+.head1,.head2{
+    height:80px;
+    top:-20px;
+    color:white;
+    text-align: center;
+    width: 140%;
+    left:-30px;
+    padding:15px;
+    position: relative;
+    background: #1e90ff;
+}
+.head1 h4,.head2 h4{
+    position: relative;
+    left:-150px;
+} 
+.head1 h4{
+    left:-70px;
+}
+.head2{
+    margin-bottom:-10px;
+    background: #7bed9f;
+}
+.submit{
+    background: #7bed9f;
+    color:white;
+}
+.table tr:nth-child(1){
+    text-align: center;
+}
+#list table{
+    width:100%;
+}
+.loader{
+    position: absolute;
+    width:180px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
