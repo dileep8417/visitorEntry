@@ -9,6 +9,8 @@
         
 ## Initial Setup
 
+####Note: Node and NPM must be installed on your system to run the project.You can install it from (https://nodejs.org/en/).
+
 1) Clone or download the project.
 2) Run the command `npm run node` to install Node packages.
 3) Run the command `npm run react` to install Reach packages.
