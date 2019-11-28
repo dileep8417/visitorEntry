@@ -19,9 +19,9 @@
 ## Configuration
 
 ### Port Configuration (Optional)
- Add desired PORT number in `.env file`. Default Port is running on `8000`.
+ Default Port is running on `8000`.You can add desired PORT number in `.env file`.
     PORT = `Port-Number`
- If you change the PORT then update the `proxy port` in (client/package.json ).
+ If you change the PORT then update that port value in `proxy` from (client/package.json ).
 
 ### Email Configuration
  Add your Gmail and Password in `.env file` for sending Email to the visitor and host.
