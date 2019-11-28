@@ -19,7 +19,7 @@
     MAIL = `Your-Mail`
     MAILPASS = `Mail-Password`
 
-Note: Make sure that less secured option must be turned on for the Gmail you are using in the project.
+#### Note: Make sure that less secured option must be turned on for the Gmail you are using in the project.
       You can turn on the option from (https://myaccount.google.com/lesssecureapps).
 
 ### Database Configuration (Optional)
@@ -38,3 +38,4 @@ Note: Make sure that less secured option must be turned on for the Gmail you are
  After completion of meeting you have to remove the visitor from the visitors list.
  Then an Email will be send to the Visitor.
 
+#### Note: node_modules are not commited
