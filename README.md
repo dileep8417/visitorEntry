@@ -6,6 +6,13 @@
         ->Nodejs
         ->Express
         ->MongoDB
+        
+## Initial Setup
+
+1) Clone or download the project.
+2) Run the command `npm run node` to install Node packages.
+3) Run the command `npm run react` to install Reach packages.
+4) Run the command `npm run project` to start the application.
 
 ## Configuration
 
