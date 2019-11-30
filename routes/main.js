@@ -55,7 +55,7 @@ router.post("/form",(req,res)=>{
            res.send("Data Inserted");
        }
        else{
-        res.send("Data not Inserted");
+        res.send("data not Inserted");
        }
       
    });    
