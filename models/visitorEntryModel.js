@@ -16,6 +16,10 @@ const dataSchema = new schema({
     exited:{
         default:0,
         type:Number
+    },
+    leaved:{
+        type:String,
+        default:"Not Leaved"
     }
 });
 

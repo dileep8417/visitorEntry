@@ -47,7 +47,7 @@ router.post("/form",(req,res)=>{
            }
            transport.sendMail(mailOptions,(e)=>{
                if(e){
-                   console.log(e)
+                console.log("Please set an Email to send email.\nmake sure your mail must be enabled with less secured option");
                }else{
                    console.log("sent");
                }
@@ -72,11 +72,33 @@ router.post("/getvisitors",(req,res)=>{
     
 });
 
+//getting visitorlog
+router.post("/genreport",(req,res)=>{
+    const model = require("../models/visitorEntryModel");
+    model.find({})
+    .then(resp=>{
+        if(resp){
+            res.send(resp);
+            console.log("Log Sent")
+        }
+    })
+    .catch(err=>{
+        console.log("err in log gen "+err);
+    });
+});
+
 //Deletion
 router.post("/delete/:id",(req,res)=>{
     const id =req.params.id;
     const model = require("../models/visitorEntryModel");
-
+    var checkOut = new Date(Date.now());
+    var hrs = parseInt(checkOut.getHours());
+    if(hrs>12){
+        hrs=hrs-12; 
+        checkOut = hrs+":"+checkOut.getMinutes()+":"+checkOut.getSeconds()+" PM";
+    }else{
+        checkOut = hrs+":"+checkOut.getMinutes()+":"+checkOut.getSeconds()+" AM";
+    }
     model.findById(id).then(resp=>{
         const mail = resp[0]['visitorEmail'];
         const name = resp[0]['visitorName'];
@@ -92,14 +114,7 @@ router.post("/delete/:id",(req,res)=>{
         }else{
             checkIn = checkIn.join(":")+" AM";
         }
-        var checkOut = new Date(Date.now());
-        var hrs = parseInt(checkOut.getHours());
-        if(hrs>12){
-            hrs=hrs-12; 
-            checkOut = hrs+":"+checkOut.getMinutes()+":"+checkOut.getSeconds()+" PM";
-        }else{
-            checkOut = hrs+":"+checkOut.getMinutes()+":"+checkOut.getSeconds()+" AM";
-        }
+        
         //Send Mail to Visitor
         const transport = require("../sendMail/mailConfig");
         transport.use("compile",hbs({
@@ -134,10 +149,12 @@ router.post("/delete/:id",(req,res)=>{
             }
         });
     }).catch(err=>{
-        console.log(err);
+        console.log("Please set an Email to send email.\nmake sure your mail must be enabled with less secured option");
     })
-    //Update exited to 1
-    model.findByIdAndUpdate(id,{$set:{exited:1}},{new:true}).then(()=>{
+
+    //Update exited to 1 and leaved
+    console.log(checkOut)
+    model.updateMany({_id:id},{$set:{exited:1,leaved:checkOut}},{multi:true,new:true}).then(()=>{
         console.log("removed");
         res.send("removed");
     }).catch(err=>{

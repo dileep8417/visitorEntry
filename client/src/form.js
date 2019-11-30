@@ -7,6 +7,9 @@ export default class Form extends Component{
         email:"",
         mobile:"",
         purpose:"",
+        hostName:"",
+        hmobile:"",
+        hemail:"",
         loading:false
     }
     handleChange = (event)=>{
@@ -48,7 +51,8 @@ export default class Form extends Component{
         return(
             <div id="">
                 
-                 <div className="head1"> <h4>Add Visitor</h4></div>
+                <div className="form">
+                <div className="head1"> <h4>Add Visitor</h4></div>
                 <form action="" method="post">
                     <table className="table visitor-info">
                         <tbody>
@@ -73,6 +77,7 @@ export default class Form extends Component{
                         </tbody>
                     </table>
                 </form>
+                </div>
             </div>
         )
     }
