@@ -19,7 +19,7 @@ const dataSchema = new schema({
     },
     leaved:{
         type:String,
-        default:"Not Leaved"
+        default:"Not leaved"
     }
 });
 
