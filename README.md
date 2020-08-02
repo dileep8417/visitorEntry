@@ -1,5 +1,4 @@
 # Visitor Entry Software
-It is an MERN Stack app that handels the visitor entry that visits an organisation and intimates the actual person whom the visitor want meet and their purpose through mail.
 ## About Project
     It is designed using the following technologies
         ->React
