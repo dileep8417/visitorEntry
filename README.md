@@ -29,7 +29,7 @@ It is an MERN Stack app that handels the visitor entry that visits an organisati
     MAILPASS = `Mail-Password`
 
 #### Note: Make sure that less secured option must be turned on for the Gmail you are using in the project.
-      You can turn on the option from (https://myaccount.google.com/lesssecureapps).
+You can turn on the option from (https://myaccount.google.com/lesssecureapps).
 
 ### Database Configuration (Optional)
  In this project we are using MongoDB (MongoDB Atlas) as database.
